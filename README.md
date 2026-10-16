@@ -1,6 +1,6 @@
 # HVAC Duct Sizing Calculator
 
-**Version 0.4 — Preliminary HVAC Engineering Calculator**
+**Version 0.5 — Preliminary HVAC Engineering Calculator**
 
 An open-source Python tool for preliminary HVAC duct sizing, airflow velocity, and duct pressure-loss calculations. Designed as an educational project for MEP engineers and engineering students.
 
@@ -12,6 +12,7 @@ An open-source Python tool for preliminary HVAC duct sizing, airflow velocity, a
 4. Automatic rectangular duct sizing
 5. Round duct pressure-loss calculation
 6. Rectangular duct pressure-loss calculation
+7. Multi-section duct route with individual fitting K-values and cumulative pressure loss
 
 ## Pressure-Loss Calculations
 
@@ -49,6 +50,21 @@ Requires Python 3. No additional Python packages are required.
 3. Run `python3 duct_calculator.py`.
 4. Select a calculation option from 1 to 7.
 5. Enter the required calculation values.
+6. Select Option 8 to exit.
+
+## Running the Automated Tests
+
+From the repository root (the folder containing duct_calculator.py), run:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Use python3 instead of python if that is your Python 3 command. No third-party packages are needed: the tests use Python's built-in unittest module.
+
+The current suite contains 13 tests covering geometry, velocity, Reynolds number, laminar and turbulent friction, round and rectangular pressure loss, individual fitting losses, a two-section route, positive-input validation, and zero fittings. A successful run ends with "Ran 13 tests" and "OK". These are software regression checks, not independent engineering certification.
+
+GitHub Actions runs this same command on every push and pull request using Python 3.11 and 3.13. Open the [Actions tab](https://github.com/soelumin-bit/hvac-duct-sizing-calculator/actions/workflows/tests.yml) to inspect the results and test logs. The workflow can also be run manually.
 
 ## Example — Round Duct Pressure Loss
 
@@ -73,7 +89,6 @@ Applicable engineering standards, actual material properties, manufacturers' dat
 
 ## Future Development
 
-- Version 0.5 — Detailed fitting losses and duct network calculations
 - Version 0.6 — Fan pressure and system resistance calculations
 - Version 1.0 — Web interface and downloadable calculation reports
 
@@ -83,9 +98,7 @@ MIT License. See the `LICENSE` file for details.
 
 ## Project Status
 
-Version 0.4 — Educational development project.
-## Version 0.5 — Multi-Section Duct Route
-
+Version 0.5 — Educational development project. The source code is available on the main branch; no tagged release has been published yet.
 ## Version 0.5 — Multi-Section Duct Route
 
 Version 0.5 retains all previous sizing and pressure-loss functions and adds:
