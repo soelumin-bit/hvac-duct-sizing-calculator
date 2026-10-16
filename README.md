@@ -84,3 +84,26 @@ MIT License. See the `LICENSE` file for details.
 ## Project Status
 
 Version 0.4 — Educational development project.
+## Version 0.5 — Multi-Section Duct Route
+
+## Version 0.5 — Multi-Section Duct Route
+
+Version 0.5 retains all previous sizing and pressure-loss functions and adds:
+
+- Individual user-entered fitting K-values
+- Multiple connected round and rectangular duct sections
+- Section-specific airflow, dimensions and duct length
+- Section-specific Reynolds numbers and Darcy friction factors
+- Individual fitting losses using local section velocity pressure
+- Cumulative straight-duct friction and fitting losses
+- Total pressure-loss summary for a specified duct path
+
+### Engineering limitations
+
+This version models one specified duct path, not a fully solved branched duct network. Fitting K-values must be selected using appropriate engineering references and reference velocities. Rectangular friction uses a simplified hydraulic-diameter method. Flow distribution, transition velocity-pressure effects, terminal losses, fan requirements and network balancing require additional analysis.
+
+The program is intended for preliminary educational and conceptual engineering calculations only. Verify all results before use in actual engineering design.
+
+### Running the program
+
+Run `python3 duct_calculator.py` and select Option 7 for Multi-Section Duct Route. Option 8 exits the application.
